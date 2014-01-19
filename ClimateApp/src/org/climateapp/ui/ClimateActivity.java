@@ -26,9 +26,15 @@ public class ClimateActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_climate);
+		addListeners();
+		
 		Intent intent = getIntent();
 		cityName = intent.getStringExtra("City");
 		getClimateInformation();
+	}
+
+	private void addListeners() {
+		// TODO Auto-generated method stub
 		((Button) findViewById(R.id.doneButton)).setOnClickListener(onClickListener);
 	}
 

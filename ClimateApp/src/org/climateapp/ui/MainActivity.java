@@ -19,8 +19,13 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		final Button okButton = (Button) findViewById(R.id.okButton);
-		okButton.setOnClickListener(onClickListener);
+		addListener();
+	}
+
+	private void addListener() {
+		// TODO Auto-generated method stub
+		((Button) findViewById(R.id.okButton)).setOnClickListener(onClickListener);
+		((Button) findViewById(R.id.exitButton)).setOnClickListener(onClickListener);
 	}
 
 	@Override

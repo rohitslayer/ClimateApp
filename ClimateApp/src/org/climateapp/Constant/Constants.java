@@ -16,4 +16,12 @@ public interface Constants {
 	public static String API_URL = "http://api.openweathermap.org/data/2.5/weather?q=:CITYNAME&mode=xml";
 	public static String GET_METHOD = "GET";
 	public static CharSequence EMPTY_STRING = "";
+
+	// Warning, Information messages
+	public static String FETCH_MSG = "Fetching Climate Information.";
+	public static String ENETER_CITY_NAME_MSG = "Please enter the city name.";
+	public static String EXIT_APPLICATION_MSG = "Do you wish to Close the Application?";
+	public static String EXIT_MESAGE_TITLE = "Exit Application.";
+	public static String OK = "Ok";
+	public static String CANCEL = "Cancel";
 }
