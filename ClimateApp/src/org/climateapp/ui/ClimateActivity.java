@@ -1,12 +1,18 @@
+/**
+ * This is the last UI screen which shows climate details.
+ * Starts an async task to fetch climate information.
+ * 
+ * @author Vallabh
+ * */
 package org.climateapp.ui;
 
+import org.climateapp.Constant.Constants;
 import org.climateapp.beans.ClimateInfo;
 import org.climateapp.ui.listeners.ClickListener;
 import org.climateapp.worker.RetrieveClimateInformation;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
@@ -27,14 +33,16 @@ public class ClimateActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_climate);
 		addListeners();
-		
+
 		Intent intent = getIntent();
 		cityName = intent.getStringExtra("City");
 		getClimateInformation();
 	}
 
+	/**
+	 * This method add different listeners to the controls
+	 * */
 	private void addListeners() {
-		// TODO Auto-generated method stub
 		((Button) findViewById(R.id.doneButton)).setOnClickListener(onClickListener);
 	}
 
@@ -42,33 +50,45 @@ public class ClimateActivity extends Activity {
 		this.climateInfo = climateInfo;
 	}
 
+	/**
+	 * This method starts async task- a different thread from UI thread
+	 **/
 	private void getClimateInformation() {
-		// TODO Auto-generated method stub
 		new RetrieveClimateInformation(this).execute(cityName);
 	}
 
+	/**
+	 * Renders the UI componenets with values from ClimateInfo VO
+	 **/
 	public void renderClimateDetails() {
-		// TODO Auto-generated method stub
+		// Find all the controls
 		TextView cityTextView = (TextView) findViewById(R.id.cityNameText);
 		TextView countryTextView = (TextView) findViewById(R.id.countryNameText);
 		TextView tempTextView = (TextView) findViewById(R.id.tempText);
 		TextView humidityTextView = (TextView) findViewById(R.id.humidityText);
 		TextView lastUpdatedTextView = (TextView) findViewById(R.id.lastUpdatedText);
 
-		Resources resource = getResources();
+		// Populate values of these controls from VO
 		cityTextView.setText(climateInfo.getCityName());
 		countryTextView.setText(climateInfo.getCountryName());
-		tempTextView.setText(resource.getString(R.string.temperature_label) + " is " + climateInfo.getTemperature());
-		humidityTextView.setText(resource.getString(R.string.humidity_label) + " is " + climateInfo.getHumidity());
-		lastUpdatedTextView.setText(resource.getString(R.string.last_updated) + " on " + climateInfo.getLastUpdate());
+		tempTextView.setText(Constants.TEMPERATURE + " is " + climateInfo.getTemperature());
+		humidityTextView.setText(Constants.HUMIDITY + " is " + climateInfo.getHumidity());
+		lastUpdatedTextView.setText(Constants.LAST_UPDATED + " on " + climateInfo.getLastUpdate());
 	}
 
+	/**
+	 * Finishes this activity and resumes main activity.
+	 **/
 	public void clickOnDone() {
 		finish();
 	}
 
+	/**
+	 * Method handles when we couldn't find the city's climate information.
+	 * Shows a simple Toast message
+	 **/
 	public void cityNotExist() {
-		Toast toast = Toast.makeText(this, "Didn't find the information for City " + cityName, Toast.LENGTH_SHORT);
+		Toast toast = Toast.makeText(this, Constants.CLIMATE_INFO_NOT_FOUND + cityName, Toast.LENGTH_SHORT);
 		toast.setGravity(Gravity.BOTTOM, 0, 0);
 		toast.show();
 		clickOnDone();

@@ -1,3 +1,11 @@
+/**
+ * This class is bean, a value object VO, of climate information.
+ * When we fetch climate information, we will populate this VO
+ * This is read only bean as user will never change the climate information
+ * once we fetch it
+ * 
+ * @author Vallabh
+ * */
 package org.climateapp.beans;
 
 public class ClimateInfo {

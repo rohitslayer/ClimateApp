@@ -1,3 +1,9 @@
+/**
+ * This is the Home UI screen which ask for city name.
+ * Creates an Intent and starts ClimateActivity on that Intent
+ * 
+ * @author Vallabh
+ * */
 package org.climateapp.ui;
 
 import org.climateapp.Constant.Constants;
@@ -22,8 +28,10 @@ public class MainActivity extends Activity {
 		addListener();
 	}
 
+	/**
+	 * Adds listeners to controls
+	 **/
 	private void addListener() {
-		// TODO Auto-generated method stub
 		((Button) findViewById(R.id.okButton)).setOnClickListener(onClickListener);
 		((Button) findViewById(R.id.exitButton)).setOnClickListener(onClickListener);
 	}
@@ -35,9 +43,12 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	/**
+	 * Overriding this method so when we say done on Climate Activity screen,
+	 * we have to make the city name text view empty on Main Activity
+	 **/
 	@Override
 	protected void onResume() {
-		// TODO Auto-generated method stub
 		super.onResume();
 		((EditText) findViewById(R.id.cityText)).setText(Constants.EMPTY_STRING);
 	}

@@ -7,11 +7,8 @@
     <string name="ok_button">OK</string>
     <string name="title_activity_weather">WeatherActivity</string>
     <string name="hello_world">Hello world!</string>
-    <string name="temperature_label">Temperature</string>
-    <string name="humidity_label">Humidity</string>
     <string name="done_button">Done</string>
     <string name="country_label">Country</string>
-    <string name="last_updated">Last Updated</string>
     <string name="exit_label">Exit</string>
 
 </resources>
