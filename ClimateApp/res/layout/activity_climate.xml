@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ClimateActivity" >
+
+    <TextView
+        android:id="@+id/cityLableText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/city_label" />
+
+    <TextView
+        android:id="@+id/cityNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/countryLabelText"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="44dp"
+        android:layout_toRightOf="@+id/cityLableText" />
+
+    <TextView
+        android:id="@+id/countryNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/countryLabelText"
+        android:layout_alignBottom="@+id/countryLabelText"
+        android:layout_alignLeft="@+id/cityNameText"
+        android:layout_alignRight="@+id/cityNameText" />
+
+    <TextView
+        android:id="@+id/countryLabelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cityLableText"
+        android:layout_below="@+id/cityLableText"
+        android:layout_marginTop="35dp"
+        android:text="@string/country_label" />
+
+    <TextView
+        android:id="@+id/humidityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/countryLabelText"
+        android:layout_below="@+id/countryLabelText"
+        android:layout_marginTop="62dp" />
+
+    <TextView
+        android:id="@+id/tempText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/humidityText"
+        android:layout_below="@+id/humidityText"
+        android:layout_marginTop="42dp" />
+
+    <TextView
+        android:id="@+id/lastUpdatedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/doneButton"
+        android:layout_alignLeft="@+id/tempText"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:text="@string/done_button" />
+
+</RelativeLayout>
