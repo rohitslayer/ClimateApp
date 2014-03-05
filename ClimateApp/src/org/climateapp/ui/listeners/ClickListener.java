@@ -43,7 +43,7 @@ public class ClickListener implements OnClickListener {
 					.getText().toString();
 			if (cityName == null || cityName.length() <= 0) {
 				Toast toast = Toast.makeText(activity,
-						"", Toast.LENGTH_SHORT);
+						Constants.ENTER_CITY_NAME_MSG, Toast.LENGTH_SHORT);
 				toast.setGravity(Gravity.BOTTOM, 0, 0);
 				toast.show();
 				return;

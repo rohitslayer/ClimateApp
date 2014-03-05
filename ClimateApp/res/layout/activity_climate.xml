@@ -76,6 +76,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="36dp"
-        android:text="@string/done_button" />
+        android:background="@drawable/ok_button" />
 
 </RelativeLayout>

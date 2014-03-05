@@ -8,23 +8,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:id="@+id/cityLableText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="28dp"
-        android:text="@string/city_label" />
-
     <EditText
         android:id="@+id/cityText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/cityLableText"
-        android:layout_alignBottom="@+id/cityLableText"
         android:layout_centerHorizontal="true"
-        android:ems="10" >
+        android:ems="10"
+        android:hint="@string/city_label" >
 
         <requestFocus />
     </EditText>
@@ -36,7 +26,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/cityText"
         android:layout_marginTop="28dp"
-        android:text="@string/ok_button" />
+        android:background="@drawable/ok_button" />
 
     <Button
         android:id="@+id/exitButton"
@@ -44,6 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/okButton"
         android:layout_alignRight="@+id/cityText"
-        android:text="@string/exit_label" />
+        android:background="@drawable/close_button" />
 
 </RelativeLayout>

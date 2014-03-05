@@ -31,7 +31,7 @@ public interface Constants {
 
 	// constants for Warning, Information messages
 	public static String FETCH_MSG = "Fetching Climate Information.";
-	public static String ENETER_CITY_NAME_MSG = "Please enter the city name.";
+	public static String ENTER_CITY_NAME_MSG = "Please enter the city name.";
 	public static String CLIMATE_INFO_NOT_FOUND = "Didn't find the information for City ";
 	public static String EXIT_APPLICATION_MSG = "Do you wish to Close the Application?";
 	public static String EXIT_MESAGE_TITLE = "Exit Application.";
